@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PML30 THE NEVA RIVER | Робототехника</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        /* Герой секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('team.jpg') no-repeat center/cover;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        /* Секция проекта */
+        .project-section {
+            padding: 80px 0;
+        }
+        
+        .project {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .project-image {
+            flex: 1;
+        }
+        
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-info {
+            flex: 1;
+        }
+        
+        .project-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .project-info p {
+            margin-bottom: 20px;
+        }
+        
+        .features li {
+            margin-bottom: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+        
+        /* Подвал */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .project {
+                flex-direction: column;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="pon.png" alt="PML30 THE NEVA RIVER">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О команде</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">PML30 THE NEVA RIVER</h1>
+                <p class="hero-subtitle">Инновационные решения в сельскохозяйственной робототехнике</p>
+                <div>
+                    <a href="projects.html" class="btn">Наши проекты</a>
+                    <a href="contact.html" class="btn btn-outline">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция проекта -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project">
+                <div class="project-image">
+                    <img src="IP.jpg" alt="Система мониторинга клубники">
+                </div>
+                <div class="project-info">
+                    <h2>Система мониторинга зрелости клубники</h2>
+                    <p>Наше решение автоматизирует процесс сбора клубники, значительно сокращая потери от перезревания плодов.</p>
+                    
+                    <h3>Как это работает:</h3>
+                    <p>Каретка с камерой движется по рельсам, анализируя зрелость ягод с помощью нейросети. При обнаружении спелой клубники система сигнализирует сборщику и ожидает сбора.</p>
+                    
+                    <h3>Преимущества:</h3>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Универсальность для хозяйств любого размера</li>
+                        <li><i class="fas fa-check"></i> Простота использования - одна кнопка управления</li>
+                        <li><i class="fas fa-check"></i> Доступная стоимость от 2000 рублей</li>
+                        <li><i class="fas fa-check"></i> Эффективное сокращение потерь урожая</li>
+                    </ul>
+                    
+                    <a href="projects.html" class="btn">Подробнее о проекте</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="thenevariver_logo_Монтажная область 1 копия 2.png" alt="PML30 THE NEVA RIVER">
+                    <p>Инновации в сельскохозяйственной робототехнике</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О команде</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PML30 THE NEVA RIVER. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
