@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клубничный дозор | Детали проекта</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Сохраняем оригинальные цвета */
+        :root {
+            --primary: #3498db; /* Синий как в index.html */
+            --dark: #2c3e50;
+            --light: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Шапка БЕЗ ИЗМЕНЕНИЙ (как в index.html) */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        /* Уникальный контент страницы проекта */
+        body {
+            background-color: var(--light);
+            padding-top: 70px; /* Отступ под шапку */
+        }
+        
+        /* Герой-заголовок проекта */
+        .project-header {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .project-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .project-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        /* Галерея проекта */
+        .project-gallery {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            margin: 15px auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* Детали проекта */
+        .project-details {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .detail-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--primary);
+        }
+        
+        .detail-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка (как в index.html) -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="pon.png" alt="PML30 THE NEVA RIVER">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О команде</a></li>
+                        <li><a href="projects.html" style="color: var(--primary);">Проекты</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Уникальный заголовок проекта -->
+    <section class="project-header">
+        <div class="container">
+            <h1>Клубничный дозор</h1>
+            <p>Автоматизированная система мониторинга зрелости клубники</p>
+            <div class="project-tags">
+                <span class="project-tag">Нейросети</span>
+                <span class="project-tag">Telegram-бот</span>
+                <span class="project-tag">Raspberry Pi</span>
+                <span class="project-tag">Компьютерное зрение</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея проекта -->
+    <section class="project-gallery">
+        <h2 class="section-title">Фотографии проекта</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="ip1.jpg" alt="Рабочий прототип системы">
+                <div class="gallery-caption">
+                    <h3>Каретка на грядке</h3>
+                    <p>Тестирование движения по рельсам</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ip2.jpg" alt="Электронные компоненты">
+                <div class="gallery-caption">
+                    <h3>Аппаратная часть</h3>
+                    <p>Микрокомпьютер и камера</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ip3.jpg" alt="Интерфейс Telegram-бота">
+                <div class="gallery-caption">
+                    <h3>Уведомления в боте</h3>
+                    <p>Фермер получает фото спелых ягод</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ip4.jpg" alt="Работа нейросети">
+                <div class="gallery-caption">
+                    <h3>Детекция зрелости</h3>
+                    <p>Нейросеть анализирует каждую ягоду</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Детали проекта -->
+    <section class="project-details">
+        <h2 class="section-title">Как это работает</h2>
+        <div class="details-container">
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Сканирование грядок</h3>
+                <p>Каретка с камерой движется по рельсам, делая снимки каждой ягоды с разных ракурсов.</p>
+            </div>
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Анализ нейросетью</h3>
+                <p>Модель YOLO определяет степень зрелости по цвету, размеру и текстуре клубники.</p>
+            </div>
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h3>Уведомления в Telegram</h3>
+                <p>Фермер получает сообщение с координатами спелых ягод и их фотографиями.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
